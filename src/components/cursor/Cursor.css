@@ -1,0 +1,41 @@
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4f46e5;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
+  animation: cursorGlow 2s ease-in-out infinite;
+}
+
+.cursor::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #4f46e5;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes cursorGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.9);
+  }
+}
+
+/* Masquer le curseur par défaut */
+* {
+  cursor: none;
+}
+
+a, button {
+  cursor: none;
+}

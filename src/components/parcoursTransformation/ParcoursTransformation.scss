@@ -1,0 +1,43 @@
+@import "../../App.scss";
+
+.transformation-path {
+  padding: 4rem 1rem;
+  background: $white;
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr; // Mobile : 1 colonne
+
+    @include tablet { grid-template-columns: 1fr 1fr; }
+    @include desktop { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .step-card {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &--1 { background: lighten($soft-bg, 2%); border-color: #e2e8f0; } // Silence
+    &--2 { background: #fefce8; border-color: #fef08a; } // Éveil
+    &--3 { background: #eef2ff; border-color: #c7d2fe; } // Structuration
+    &--4 { background: #f0fdf4; border-color: #bbf7d0; } // Épanouissement
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background: $white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

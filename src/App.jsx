@@ -1,51 +1,26 @@
-import "./App.scss";
-import Navbar from "./components/navbar/Navbar.jsx";
-import Sidebar from "./components/sidebar/Sidebar.jsx";
-import Hero from "./components/Hero/Hero.jsx";
-import Parallax from "./components/parallax/Parallax.jsx";
-import Services from "./components/services/Services.jsx";
-import Projects from "./components/projects/Projects.jsx";
-import About from "./components/about/About.jsx";
-import Contact from "./components/contact/Contact.jsx";
+import "./App.css";
 import Cursor from "./components/cursor/Cursor.jsx";
+import KolosiWebsite from "./components/KolosiWebSite/KolosiWebSite.jsx";
+import Footer from "./components/footer/Footer.jsx";
+import ParcoursTransformation from "./components/parcoursTransformation/ParcoursTransformation.jsx";
 
 const App = () => {
-  return <div>
-    <Cursor />
-    <section id="Homepage">
-      {/* <Sidebar /> */}
-      <Navbar />
-      <Hero />
-      <Sidebar />
-    </section>
+  return (
+    <div>
+      <Cursor />
+      <section id="KolosiWebSite">
+        <KolosiWebsite />
+      </section>
 
-    <section id="Services">
-      <Parallax type="services" />
-    </section>
-    <section>
-      <Services />
-    </section>
+      <section id="ParcoursTransformation">
+        <ParcoursTransformation />
+      </section>
 
-    <section id="Projects">
-      <Parallax type="projects" />
-    </section>
-      <Projects />
-  
-
-    <section id="About">
-      <Parallax type="about" />
-    </section>
-    <section>
-      <About />
-    </section>
-
-    <section id="Contact">
-      <Parallax type="contact" />
-    </section>
-    <section>
-      <Contact />
-    </section>
-  </div>;
+      <section id="Footer">
+        <Footer />
+      </section>
+    </div>
+  );
 };
 
 export default App;
