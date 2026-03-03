@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Heart, Users, Lightbulb, Target, Award, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import AnimatedCircles from './AnimatedCircles';
 
 const KolosiWebsite = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -47,6 +48,7 @@ const KolosiWebsite = () => {
 
       {/* HERO SECTION */}
       <section className="relative px-6 md:px-12 py-20 grid md:grid-cols-2 items-center overflow-hidden gap-8 bg-gradient-to-br from-slate-50 to-white">
+        <AnimatedCircles />
         <div className="z-10">
           <h1 className="text-5xl md:text-6xl font-light italic mb-2" style={{color: '#bc00ac'}}>
             La résilience pour tous
@@ -104,7 +106,8 @@ const KolosiWebsite = () => {
       </section>
 
       {/* SECTION VALEURS */}
-      <section className="px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-white">
+      <section className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-white overflow-hidden">
+        <AnimatedCircles />
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4" style={{color: '#8a0080'}}>Nos 5 Piliers</h3>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -133,7 +136,8 @@ const KolosiWebsite = () => {
       </section>
 
       {/* SECTION ACTIONS */}
-      <section id="actions" className="px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-gradient-to-br from-purple-50 to-slate-50">
+      <section id="actions" className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-gradient-to-br from-purple-50 to-slate-50 overflow-hidden">
+        <AnimatedCircles />
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4" style={{color: '#8a0080'}}>Nos Actions</h3>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -163,7 +167,8 @@ const KolosiWebsite = () => {
       </section>
 
       {/* SECTION PARTENAIRES */}
-      <section id="partenaires" className="px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-white">
+      <section id="partenaires" className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-white overflow-hidden">
+        <AnimatedCircles />
         <div className="text-center mb-12 sm:mb-16">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4" style={{color: '#8a0080'}}>Nos Partenaires</h3>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
@@ -193,7 +198,8 @@ const KolosiWebsite = () => {
       </section>
 
       {/* SECTION CONTACT */}
-      <section id="contact" className="px-4 sm:px-6 md:px-12 py-16 sm:py-24 text-white" style={{background: 'linear-gradient(to bottom right, #8a0080, #bc00ac)'}}>
+      <section id="contact" className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-24 text-white overflow-hidden" style={{background: 'linear-gradient(to bottom right, #8a0080, #bc00ac)'}}>
+        <AnimatedCircles />
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
             {/* CONTACT INFO */}
@@ -294,7 +300,7 @@ const KolosiWebsite = () => {
 
       {/* FOOTER */}
       <footer className="text-white px-4 sm:px-6 md:px-12 py-6 sm:py-8 text-center border-t" style={{backgroundColor: '#8a0080', borderColor: '#bc00ac'}}>
-        <p className="mb-2 text-xs sm:text-sm md:text-base">&copy; 2024 Kolosi Drepano. Tous droits réservés.</p>
+        <p className="mb-2 text-xs sm:text-sm md:text-base">&copy; 2026 Kolosi Drepano.| Par David Loïc ZIEM NGAM | Tous droits réservés.</p>
         <p className="text-xs sm:text-sm">Ensemble pour une vie meilleure | Lève-toi et brille</p>
       </footer>
     </div>

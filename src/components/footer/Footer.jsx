@@ -68,7 +68,7 @@ const Footer = () => {
 
         {/* Barre de fin */}
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-purple-200 animate-fade-in" style={{borderColor: '#bc00ac'}}>
-          <p>© 2026 Kolosi Drepano. Tous droits réservés.</p>
+          <p>© 2026 Kolosi Drepano|par David Loïc ZIEM | Tous droits réservés.</p>
           <div className="flex items-center gap-2">
             <span>Fait avec résilience à Yaoundé</span>
             <button 
