@@ -34,14 +34,14 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white pt-24 pb-16">
-      <div className="px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{color: '#8a0080'}}>Galerie Kolosi</h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Découvrez nos moments, nos actions et notre engagement auprès des jeunes atteints de drépanocytose.</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white pt-20 sm:pt-24 pb-12 sm:pb-16">
+      <div className="px-3 sm:px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4" style={{color: '#8a0080'}}>Galerie Kolosi</h1>
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">Découvrez nos moments, nos actions et notre engagement auprès des jeunes atteints de drépanocytose.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
@@ -49,7 +49,7 @@ const Gallery = () => {
                 setSelectedImage(image);
                 setCurrentIndex(index);
               }}
-              className="relative h-48 rounded-xl overflow-hidden cursor-pointer group shadow-md hover:shadow-xl transition-all duration-300"
+              className="relative h-32 sm:h-40 md:h-48 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer group shadow-sm sm:shadow-md hover:shadow-lg transition-all duration-300"
             >
               <img
                 src={image}
@@ -63,37 +63,37 @@ const Gallery = () => {
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full">
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="relative w-full max-w-2xl sm:max-w-4xl">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+              className="absolute -top-8 sm:-top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
             >
-              <X size={32} />
+              <X size={28} className="sm:w-8 sm:h-8" />
             </button>
 
             <div className="relative bg-black rounded-lg overflow-hidden">
               <img
                 src={selectedImage}
                 alt="Galerie agrandie"
-                className="w-full h-auto max-h-96 object-contain"
+                className="w-full h-auto max-h-60 sm:max-h-96 object-contain"
               />
 
               <button
                 onClick={handlePrev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full transition-all duration-300"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full transition-all duration-300"
               >
-                <ChevronLeft size={24} className="text-white" />
+                <ChevronLeft size={20} className="sm:w-6 sm:h-6 text-white" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-2 rounded-full transition-all duration-300"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-1 sm:p-2 rounded-full transition-all duration-300"
               >
-                <ChevronRight size={24} className="text-white" />
+                <ChevronRight size={20} className="sm:w-6 sm:h-6 text-white" />
               </button>
 
-              <div className="text-center text-white text-sm py-2 bg-black/50">
+              <div className="text-center text-white text-xs sm:text-sm py-1 sm:py-2 bg-black/50">
                 {currentIndex + 1} / {images.length}
               </div>
             </div>

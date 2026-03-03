@@ -8,6 +8,7 @@
   z-index: 9999;
   box-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
   animation: cursorGlow 2s ease-in-out infinite;
+  will-change: transform;
 }
 
 .cursor::before {
@@ -31,8 +32,7 @@
   }
 }
 
-/* Masquer le curseur par défaut */
-* {
+html {
   cursor: none;
 }
 
