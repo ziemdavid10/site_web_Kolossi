@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowRight, Heart, Users, Lightbulb, Target, Award, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { ArrowRight, Heart, Users, Lightbulb, Target, Award, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Image } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import AnimatedCircles from './AnimatedCircles';
 
 const KolosiWebsite = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleFormChange = (e) => {
@@ -20,21 +22,23 @@ const KolosiWebsite = () => {
     <div className="font-sans text-slate-900 bg-white">
       {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 flex justify-between items-center px-4 sm:px-6 md:px-12 py-3 sm:py-4 bg-white shadow-md">
-        <img src="/LOGO KOLOSI.jpg.jpeg" alt="Kolosi Drepano Logo" className="w-24 sm:w-28 md:w-32 h-16 object-contain shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300" />
+        <button onClick={() => navigate('/')} className="cursor-pointer hover:opacity-80 transition-opacity">
+          <img src="/LOGO KOLOSI.jpg.jpeg" alt="Kolosi Drepano Logo" className="w-24 sm:w-28 md:w-32 h-16 object-contain shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300" />
+        </button>
         
         <div className="hidden md:flex gap-6 lg:gap-8 text-xs sm:text-sm font-medium text-slate-700">
-          <a href="#association" className="transition-colors duration-300 relative group" style={{"--hover-color": "#bc00ac"}} onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+          <button onClick={() => navigate('/about')} className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
             L'Association
             <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{backgroundColor: '#bc00ac'}}></span>
-          </a>
-          <a href="#actions" className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+          </button>
+          <button onClick={() => navigate('/actions')} className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
             Nos Actions
             <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{backgroundColor: '#bc00ac'}}></span>
-          </a>
-          <a href="#partenaires" className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
-            Partenaires
+          </button>
+          <button onClick={() => navigate('/gallery')} className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
+            Galerie
             <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{backgroundColor: '#bc00ac'}}></span>
-          </a>
+          </button>
           <a href="#contact" className="transition-colors duration-300 relative group" onMouseEnter={(e) => e.target.style.color = '#bc00ac'} onMouseLeave={(e) => e.target.style.color = '#374151'}>
             Contact
             <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{backgroundColor: '#bc00ac'}}></span>
@@ -59,7 +63,7 @@ const KolosiWebsite = () => {
           <p className="max-w-md text-slate-600 mb-10 leading-relaxed text-lg">
             Nous transformons le vécu de la maladie en un moteur d'autonomie. Nous construisons un pont vers l'avenir pour chaque talent atteint de drépanocytose au Cameroun.
           </p>
-          <button className="text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg" style={{background: 'linear-gradient(to right, #bc00ac, #8a0080)'}}>
+          <button onClick={() => navigate('/about')} className="text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg" style={{background: 'linear-gradient(to right, #bc00ac, #8a0080)'}}>
             Qui sommes-nous ? <ArrowRight size={20} />
           </button>
         </div>
@@ -154,14 +158,15 @@ const KolosiWebsite = () => {
             { icon: <Award className="w-12 h-12 text-purple-500" />, title: "Bourses d'Études", desc: "Soutien financier pour la scolarité des jeunes en difficulté." },
             { icon: <Users className="w-12 h-12" style={{color: '#8a0080'}} />, title: "Réseautage", desc: "Création de communautés de soutien entre patients et familles." }
           ].map((action, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-slate-200 hover:border-purple-300"
+            <button
+              key={index}
+              onClick={() => navigate('/actions')}
+              className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-slate-200 hover:border-purple-300 text-left"
             >
               <div className="mb-4">{action.icon}</div>
               <h4 className="font-bold text-base sm:text-lg md:text-xl mb-3" style={{color: '#8a0080'}}>{action.title}</h4>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{action.desc}</p>
-            </div>
+            </button>
           ))}
         </div>
       </section>
@@ -194,6 +199,41 @@ const KolosiWebsite = () => {
               <p className="text-slate-700 font-semibold text-xs sm:text-sm md:text-base">{partner}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SECTION GALERIE */}
+      <section className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-24 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
+        <AnimatedCircles />
+        <div className="text-center mb-12 sm:mb-16">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4" style={{color: '#8a0080'}}>Galerie Kolosi</h3>
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
+            Découvrez nos moments, nos actions et notre engagement auprès des jeunes atteints de drépanocytose.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          {[
+            '/imagekolosi/IMG_0727.JPG.jpeg',
+            '/imagekolosi/IMG_0730111.JPG.jpeg',
+            '/imagekolosi/IMG_7654.JPG.jpeg',
+            '/imagekolosi/WhatsApp Image 2026-02-09 at 2.52.50 PM.jpeg'
+          ].map((image, index) => (
+            <div key={index} className="relative h-40 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
+              <img src={image} alt={`Galerie ${index + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => navigate('/gallery')}
+            className="text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg mx-auto"
+            style={{background: 'linear-gradient(to right, #bc00ac, #8a0080)'}}
+          >
+            Voir la galerie complète <Image size={20} />
+          </button>
         </div>
       </section>
 
