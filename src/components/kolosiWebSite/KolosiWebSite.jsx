@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Heart, Users, Lightbulb, Target, Award, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Image } from 'lucide-react';
+import { ArrowRight, Heart, Users, Lightbulb, Target, Award, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Image, ArrowUpCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedCircles from './AnimatedCircles';
 
@@ -241,10 +241,17 @@ const KolosiWebsite = () => {
       </section>
 
       {/* SECTION CONTACT */}
-      <section id="contact" className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-24 text-white overflow-hidden" style={{background: 'linear-gradient(to bottom right, #8a0080, #bc00ac)'}}>
+      <section id="contact" 
+        className="relative px-4 sm:px-6 md:px-12 lg:px-16 py-12 sm:py-24 text-white overflow-hidden" 
+        style={{
+          background: 'linear-gradient(to bottom right, #8a0080, #bc00ac)',
+          minHeight: '1030px',
+          height: 'auto'}}>
         <AnimatedCircles />
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-16">
+        <div className="max-w-7xl mx-auto"
+          style={{ marginBottom: "150px"}}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-20">
             {/* CONTACT INFO */}
             <div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">Nous Contacter</h3>
@@ -341,7 +348,59 @@ const KolosiWebsite = () => {
             </div>
           </div>
         </div>
+        <footer className="text-white pt-12 sm:pt-20 lg:pt-24 pb-6 sm:pb-10 lg:pb-12 px-4 sm:px-6 md:px-12 lg:px-16 w-full" 
+          style={{
+            backgroundColor: '#8a0080',
+            marginLeft: 'calc(-45vw + 50%)',
+            // marginLeft: 'calc(-50vw + 50%)',
+            marginRight: 'calc(-45vw + 70%)',
+            }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-16">
+            <div>
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style={{backgroundColor: '#bc00ac'}}>KD</div>
+                <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight">KOLOSI DREPANO</span>
+              </div>
+              <p className="text-purple-100 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Une société inclusive est une société qui s'enrichit de toutes ses forces. » Ensemble, brisons le cycle de l'exclusion au Cameroun.</p>
+            </div>
+            <div className="flex flex-col gap-3 sm:gap-4">
+              <h4 className="font-bold text-base sm:text-lg mb-2">Navigation</h4>
+              {['Notre Vision 2030', 'Centre d\'Insertion', 'Plaidoyer et Sensibilisation', 'Mentions Légales'].map((link, i) => (
+                <a key={i} href="#" className="text-purple-100 hover:text-white text-xs sm:text-sm">{link}</a>
+              ))}
+            </div>
+            <div>
+              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-6">Rejoignez le mouvement</h4>
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <a href="mailto:Kolosi.association@gmail.com" className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#bc00ac'}}>
+                    <Mail size={16} className="sm:w-5 sm:h-5" />
+                  </div>
+                  <span className="text-xs sm:text-sm">Kolosi.association@gmail.com</span>
+                </a>
+                <a href="https://facebook.com/kolosidrepano" className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#bc00ac'}}>
+                    <Facebook size={16} className="sm:w-5 sm:h-5" />
+                  </div>
+                  <span className="text-xs sm:text-sm">Kolosi Drepano</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t pt-4 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 text-xs text-purple-200" style={{borderColor: '#bc00ac'}}>
+            <p className="text-center sm:text-left">© 2026 Kolosi Drepano | by CMCT | Tous droits réservés.</p>
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-shrink-0">
+              <span className="text-xs sm:text-sm">Vers le Haut de page</span>
+              <ArrowUpCircle size={20} className="sm:w-6 sm:h-6" />
+            </button>
+          </div>
+        </div>
+      </footer>
       </section>
+
+      {/* SECTION FOOTER */}
+      
     </div>
   );
 };

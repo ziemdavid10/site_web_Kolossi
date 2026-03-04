@@ -5,7 +5,6 @@ import KolosiWebsite from "./components/kolosiWebSite/KolosiWebSite.jsx";
 import AboutPage from "./components/kolosiWebSite/AboutPage.jsx";
 import ActionsPage from "./components/kolosiWebSite/ActionsPage.jsx";
 import Gallery from "./components/kolosiWebSite/Gallery.jsx";
-import Footer from "./components/footer/Footer.jsx";
 import ParcoursTransformation from "./components/parcoursTransformation/ParcoursTransformation.jsx";
 
 const App = () => {
@@ -18,7 +17,7 @@ const App = () => {
         <Route path="/actions" element={<ActionsPage />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
