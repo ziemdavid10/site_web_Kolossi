@@ -89,12 +89,71 @@ const KolosiWebsite = () => {
 
       {/* SECTION À PROPOS */}
       <section id="association" className="px-4 sm:px-6 md:px-12 py-12 sm:py-24 bg-slate-50 flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-        <div className="w-full md:w-1/2 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-white flex items-center justify-center" style={{height: '500px'}}>
-          <img 
-            src="/imagekolosi/IMG_0724.JPG.jpeg" 
-            alt="Action Kolosi" 
-            className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
-          />
+        <div className="w-full md:w-1/2 flex justify-center items-end relative" style={{height: '500px'}}>
+          {/* Main tenant le téléphone */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-0" style={{
+            width: '120px',
+            height: '200px',
+            background: 'linear-gradient(135deg, #d4a574 0%, #c9956f 100%)',
+            borderRadius: '50% 50% 40% 40%',
+            transform: 'translateX(-50%) rotate(-15deg)',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+          }}>
+            {/* Pouce */}
+            <div style={{
+              position: 'absolute',
+              width: '40px',
+              height: '60px',
+              background: 'linear-gradient(135deg, #d4a574 0%, #c9956f 100%)',
+              borderRadius: '50% 50% 40% 40%',
+              top: '20px',
+              right: '-30px',
+              transform: 'rotate(25deg)',
+              boxShadow: '0 5px 15px rgba(0,0,0,0.15)'
+            }} />
+          </div>
+          
+          {/* iPhone Frame */}
+          <div className="relative z-10" style={{
+            width: '280px',
+            height: '500px',
+            background: '#000',
+            borderRadius: '40px',
+            padding: '12px',
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.1)',
+            border: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            {/* Notch */}
+            <div style={{
+              position: 'absolute',
+              top: '0',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '150px',
+              height: '28px',
+              background: '#000',
+              borderRadius: '0 0 30px 30px',
+              zIndex: 20
+            }} />
+            
+            {/* Screen */}
+            <div style={{
+              width: '100%',
+              height: '100%',
+              background: '#fff',
+              borderRadius: '32px',
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <img 
+                src="/imagekolosi/IMG_0724.JPG.jpeg" 
+                alt="Action Kolosi" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
         
         <div className="w-full md:w-1/2">
